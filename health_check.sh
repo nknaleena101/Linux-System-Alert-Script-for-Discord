@@ -1,9 +1,9 @@
 #!/bin/bash
-source .env
+source "$SCRIPT_DIR/.env"
 
 THRESHOLD=80
 WEBHOOK_URL=$DISCORD_WEBHOOK_URL
-HOSTNAME=${hostname)
+HOSTNAME=$(hostname)
 
 #parse the data
 DISK_USAGE=$(df / | awk 'NR==2 {print $5}' | tr -d '%')
