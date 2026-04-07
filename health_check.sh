@@ -26,4 +26,14 @@ if [ "$CPU_USAGE" -gt "$THRESHOLD" ]; then
 fi
 
 
+#sending the alerts
+if [ ! -z "$MESSAGE" ]; then
+	echo "Threshold exceeded. Sending Discord alert..."
+	curl -H "Content-Type: application/json" \
+		-X POST \
+		-d "{\"content\": \"$MESSAGE\"}" \
+		$WEBHOOK_URL
+else
+	echo "System health is within normal limits ($DISK_USAGE%, $MEM_USAGE%, $CPU_USAGE%)."
+fi
 
