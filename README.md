@@ -2,6 +2,9 @@
 
 Welcome! This project provides a simple, beginner friendly Bash script that monitors your Linux system's health and sends alerts directly to your Discord server. It's perfect for keeping an eye on your server or personal machine without needing complex monitoring software.
 
+
+![discord bot](https://github.com/user-attachments/assets/33ce41ba-1d2f-46e8-b9ab-cca46585f250)
+
 ## Features
 - Checks system health (CPU, RAM, Disk usage, etc.).
 - Sends automated, formatted messages to a Discord channel.
