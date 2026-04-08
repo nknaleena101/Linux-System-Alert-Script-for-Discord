@@ -1,6 +1,6 @@
 # Linux System Alert Script for Discord
 
-Welcome! This project provides a simple, beginner-friendly Bash script that monitors your Linux system's health and sends alerts directly to your Discord server. It's perfect for keeping an eye on your server or personal machine without needing complex monitoring software.
+Welcome! This project provides a simple, beginner friendly Bash script that monitors your Linux system's health and sends alerts directly to your Discord server. It's perfect for keeping an eye on your server or personal machine without needing complex monitoring software.
 
 ## Features
 - Checks system health (CPU, RAM, Disk usage, etc.).
@@ -13,7 +13,7 @@ Welcome! This project provides a simple, beginner-friendly Bash script that moni
 
 ---
 
-## Step-by-Step Setup Guide
+## Step by Step Setup Guide
 
 ### 1. Get Your Discord Webhook URL
 To send messages to Discord, you need a Webhook URL. Think of this as a secret address that allows outside applications to post messages to a specific channel.
@@ -56,12 +56,12 @@ Run the script manually to confirm everything is working properly:
 ```bash
 ./health_check.sh
 ```
-*Check your Discord channel—if setup correctly, you should receive a new message with your system alert!*
+*Check your Discord channel if setup correctly, you should receive a new message with your system alert!*
 
 ---
 
 ## Automation (Hourly Alerts)
-Running it manually is a great start, but automating it is much better! You can use `cron`, a built-in time-based job scheduler in Linux, to run the script automatically in the background.
+Running it manually is a great start, but automating it is much better! You can use `cron`, a built in time based job scheduler in Linux, to run the script automatically in the background.
 
 1. Open your cron table for editing:
    ```bash
@@ -71,13 +71,13 @@ Running it manually is a great start, but automating it is much better! You can 
    *(**Note:** Make sure to replace the path below with the **actual absolute path** to where you saved `health_check.sh` on your own system!)*
 
    ```bash
-   0 * * * * /home/naleena/coding_projects/Linux-System-Alert-Script-for-Discord/health_check.sh > /dev/null 2>&1
+   0 * * * * /full/path/to/your/health_check.sh > /dev/null 2>&1
    ```
 3. Save and close the editor. You are all set!
 
 ### What does the cron command do?
 - `0 * * * *` tells cron to run the script at the start of every hour (e.g., exactly at 1:00, 2:00, 3:00).
-- `/home/naleena/.../health_check.sh` is the absolute path to your script. Cron needs the full path to know exactly where the file is.
+- `/full/path/to/your/health_check.sh` is the absolute path to your script. Cron needs the full path to know exactly where the file is.
 - `> /dev/null 2>&1` quietly suppresses system generated output emails, keeping your system logs clean since warnings are now managed by Discord!
 
 ---
