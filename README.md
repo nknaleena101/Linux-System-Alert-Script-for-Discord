@@ -51,13 +51,6 @@ Before Linux can run the bash script, you have to give it execute permissions:
 chmod +x health_check.sh
 ```
 
-### 5. Test the Setup
-Run the script manually to confirm everything is working properly:
-```bash
-./health_check.sh
-```
-*Check your Discord channel if setup correctly, you should receive a new message with your system alert!*
-
 ---
 
 ## Automation (Hourly Alerts)
@@ -80,5 +73,17 @@ Running it manually is a great start, but automating it is much better! You can 
 - `/full/path/to/your/health_check.sh` is the absolute path to your script. Cron needs the full path to know exactly where the file is.
 - `> /dev/null 2>&1` quietly suppresses system generated output emails, keeping your system logs clean since warnings are now managed by Discord!
 
+---
+### Test the Setup
+Run the script manually to confirm everything is working properly:
+```bash
+./health_check.sh
+```
+*Check your Discord channel if setup correctly, you should receive a new message with your system alert!*
+**💡 Pro Tip: Testing the Alerts**
+If your script is configured to only send alerts when usage exceeds 80%, you don't need to actually overload your system to test it! 
+- Open `health_check.sh` and temporarily change the threshold limit from `80` to `10`.
+- To test the cron job automation quickly, you can temporarily change your cron schedule from `0 * * * *` (hourly) to `* * * * *` (every minute).
+*Remember to change them back to normal once you confirm it works!*
 ---
 **Author**: [nknaleena101](https://github.com/nknaleena101)
